@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Mood Chat</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Add background sounds to your voice chats.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="http://tomgalle.com/favicons/moodchat2.ico">
+
+
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Mood Chat">
+
+
+
+    <!--<link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">-->
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <!--<meta name="apple-mobile-web-app-capable" content="yes">-->
+    <!--<meta name="apple-mobile-web-app-status-bar-style" content="black">-->
+    <!--<meta name="apple-mobile-web-app-title" content="Web Starter Kit">-->
+    <!--<link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">-->
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <!--<meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">-->
+    <!--<meta name="msapplication-TileColor" content="#2F3BA2">-->
+
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+
+    -->
+
+
+    <!--FACEBOOK META STUFF-->
+    <meta property="og:image" content="http://www.tomgalle.com/thumbnails/moodchat2.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Mood Chat" />
+    <meta property="og:site_name" content="Mood Chat" />
+    <meta property="og:description" content="Add Background Sounds to Your Voice Chats" />
+    <meta property="og:url" content="http://mood.chat/">
+
+
+    <!--TWITTER META STUFF-->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="http://mood.chat/">
+    <meta name="twitter:creator" content="@tomgalle, @BertsIdleHands, @muroicci">
+    <meta name="twitter:title" content="Mood Chat">
+    <meta name="twitter:description" content="Add Background Sounds to Your Voice Chats">
+    <meta name="twitter:image" content="http://www.tomgalle.com/thumbnails/moodchat2.jpg" />
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="styles/normalize.css">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+
+
+  </head>
+
+  <body>
+
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '261041700909743',
+        xfbml      : true,
+        version    : 'v2.6'
+      });
+
+
+      // Get Embedded Video Player API Instance
+      var my_video_player;
+      FB.Event.subscribe('xfbml.ready', function(msg) {
+        if (msg.type === 'video') {
+          my_video_player = msg.instance;
+        }
+      });
+    };
+
+    (function(d, s, id){
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+
+
+
+
+    </script>
+
+
+    <!--  VIDEO  -->
+    <div class="videowrapper">
+
+      <div
+        class="fb-video"
+        data-href="https://www.facebook.com/tomgalledotcom/videos/10208276981095806/"
+        data-width="auto"
+        data-allowfullscreen="true"</div>
+    </div>
+
+    <div class="videobg"></div>
+    <!-- VIDEO END  -->
+
+
+    <div class="center">
+
+            <div class="screens">
+              <img class="screen01" src="images/screen01.png" width="197px" height="352px">
+            </div>
+
+            <div class="phone">
+              <img src="images/iphone.png" alt="iphone" width="232px" height="473px">
+            </div>
+
+            <div class="textblock">
+              <div class="title">Mood Chat</div>
+              <div class="subtitle">Add Background Sounds to Your Voice Chats</div>
+            </div>
+
+            <div class="buttons">
+              <a href="https://itunes.apple.com/us/app/mood-chat/id1001170415?mt=8" target="_blank">
+                <img class="appstorebutton" src="images/appstorebutton.png" alt="" width="221" height="65">
+              </a>
+
+              <!--<a href="https://www.youtube.com/watch?v=puEo5A7Zox8" target="_blank">-->
+                <img class="videobutton" src="images/videobutton02.png" alt="" width="221" height="65">
+              <!--</a>-->
+            </div>
+
+    </div> <!--center-->
+
+
+    <footer>
+      <div class="credits">
+        Made By <a target="_blank" href="http://idlehands.be/">Bert Vermeire</a>, <a target="_blank" href="http://twitter.com/tomgalle">Tom Galle</a>, <a target="_blank" href="http://twitter.com/muroicci">Eiji Muroichi</a>
+      </div>
+    </footer>
+
+    <!--GRADIENT-->
+    <div class="whiteoverlay"></div>
+    <div id="gradient"></div>
+
+
+    <!-- GOOGLE ANALYTICS -->
+
+
+
+
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+
+
+
+  <script>
+
+  (function() {
+
+    var videowrapper = $('.videowrapper');
+    var videobg = $('.videobg');
+    var videobutton = $('.videobutton');
+    var video = $('.fb-video')
+
+    videobutton.click(function(){
+        videobg.css({"display" : "inline"});
+        video.css({"z-index" : "1" });
+    });
+    my_video_player.play();
+
+//
+    videobg.click(function(){
+      location.reload();
+//      video.css({"z-index" : "-20000" });
+//      videobg.css({"display": "none"});
+    });
+
+    console.log(my_video_player);
+
+  })();
+
+  </script>
+  <script src="scripts/main.js"></script>
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
