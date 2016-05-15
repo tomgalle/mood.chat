@@ -17,10 +17,10 @@ html, body{
   margin-right: auto;
   margin-left: auto;
   min-height: 70vh;
-  width: 900px;
+  width: 870px;
+  height: 600px;
   top: 6em;
   /*background-color: gray;*/
-  /*opacity: 0.4;*/
 }
 
 
@@ -48,40 +48,37 @@ html, body{
 
 /*}*/
 
-
-
 .phone{
   z-index: 2005;
+  margin-left: 2.5vw;
+  margin-top: 5vh;
   /*display: none;*/
   /*width:258px;*/
   /*height: 526px;*/
-  position: absolute;
-  left: 50px;
-  top: 50px;
+  /*position: absolute;*/
 }
-
 
 .screens{
   z-index: 3000;
   position: absolute;
-  left: 67px;
-  top: 109px;
-  /*border: 1px solid red;*/
+  margin-left: 17px;
+  margin-top: 60px;
+  /*left: 67px;*/
+  /*top: 109px;*/
 }
 
 
-.textblock{
+.infoblock{
   position: absolute;
   /*background-color: green;*/
-  left: 340px;
-  top:160px;
-  width: 550px;
-  height: 200px;
+  right: 2vw;
+  top:  80px;
+  width: 520px;
+  height: 400px;
 }
 
 .title{
-  margin-top: 20px;
-  font-family: Helvetica, Arial, sans-serif;
+  margin-top: 75px;
   font-size: 36px;
   color:#3D3633;
   font-weight: bold;
@@ -94,12 +91,14 @@ html, body{
 }
 
 .buttons{
-  position: absolute;
+  /*position: absolute;*/
   /*background-color: orange;*/
   width: 550px;
   height: 100px;
-  left: 340px;
-  top:305px;
+  margin-top: 55px;
+  /*left: 340px;*/
+  /*top:305px;*/
+  z-index: 10000;
 }
 
 .videobutton{
@@ -119,6 +118,7 @@ html, body{
   /*border:1px solid black;*/
   /*z-index: 100000;*/
   /*background-color: black;*/
+  /*z-index: -20000;*/
 }
 
 
@@ -143,39 +143,6 @@ html, body{
 }
 
 
-
-
-/*.videowrapperappear{*/
-/*!*display: none;*!*/
-/*!*visibility: hidden;*!*/
-/*width: 750px;*/
-/*height: 422px;*/
-/*margin: auto;*/
-/*position: fixed;*/
-/*top: 0; left: 0; bottom: 0; right: 0;*/
-/*border:1px solid black;*/
-/*z-index: 100000;*/
-/*}*/
-
-
-/*.videobgappear{*/
-/*!*display: none;*!*/
-/*!*visibility: hidden;*!*/
-/*background-color: black;*/
-/*opacity: 0.5;*/
-/*padding: 0px;*/
-/*margin: 0px;*/
-/*width:100%;*/
-/*height: 100%;*/
-/*position: fixed;*/
-/*top: 0; left: 0; bottom: 0; right: 0;*/
-/*z-index: -45;*/
-/*}*/
-
-
-
-
-
 footer{
   position: fixed;
   bottom: 10px;
@@ -191,7 +158,6 @@ footer{
 .credits a {
   color:#484848;
   text-decoration: none;
-  /*border-bottom: 1px solid #484848;*/
 }
 
 .credits a:hover {
@@ -236,69 +202,93 @@ footer{
 
 
 
-@media screen and (max-width: 730px) {
+@media screen and (max-width: 1024px) {
 
-html, body{
-  padding: 0px;
-  margin: 0px;
-  width:100%;
-  height: 100%;
-  position: absolute;
-  /*overflow: hidden;*/
-  /*display: none;*/
 
-  color:red;
-  background-color: red;
-  /*font-family: Alright Sans Regular, Arial, Helvetica, sans-serif;*/
-  /*font-family: Helvetica, Arial, sans-serif;*/
-  /*font-family: Times New Roman;*/
 
-}
+  .center{
+    z-index: -50;
+    position: fixed;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    min-height: 70vh;
+    width: 800px;
+    top: 3em;
+    background-color: gray;
+    /*opacity: 0.4;*/
+  }
+
+
+
+  .phone{
+    z-index: 2005;
+    /*display: none;*/
+    /*width:258px;*/
+    /*height: 526px;*/
+    position: static;
+    margin-left: 35px;
+    margin-top: 50px;
+  }
+
+
+  .screens{
+    z-index: 3000;
+    position: absolute;
+    left: 52px;
+    top: 109px;
+    /*border: 1px solid red;*/
+  }
+
+  /*.screens01{*/
+    /*z-index: 3000;*/
+    /*position: absolute;*/
+    /*left: 52px;*/
+    /*top: 109px;*/
+    /*!*border: 1px solid red;*!*/
+  /*}*/
+
+
 
 
   .textblock{
     position: absolute;
-    background-color: green;
-    left: 340px;
-    top:160px;
+    /*background-color: green;*/
+    left: 310px;
+    top:130px;
     width: 550px;
     height: 200px;
   }
 
 
+  .title{
+    font-size: 32px;
+  }
+  .subtitle{
+    font-size: 23px;
+   }
 
 
 
+  .buttons{
+    position: absolute;
+    /*background-color: orange;*/
+    width: 550px;
+    height: 100px;
+    left: 320px;
+    top: 275px;
+  }
+
+footer{
+  font-size: 13px;
+  bottom: 18px;
+}
 
 
 
 }
 
-
-
-/*@font-face {*/
-/*font-family: 'Alright Sans Regular';*/
-/*src: url('/fonts/AlrightSans-Regular.eot'); !* IE9 Compat Modes *!*/
-/*src: url('/fonts/AlrightSans-Regular.eot?#iefix') format('embedded-opentype'), !* IE6-IE8 *!*/
-/*url('/fonts/AlrightSans-Regular.woff') format('woff'), !* Modern Browsers *!*/
-/*url('/fonts/AlrightSans-Regular.ttf')  format('truetype'), !* Safari, Android, iOS *!*/
-/*url('/fonts/AlrightSans-Regular.svg#20e3d7615045d60b109d61b49c48515c') format('svg'); !* Legacy iOS *!*/
-
-/*font-style:   normal;*/
-/*font-weight:  400;*/
-/*}*/
-
-/*@font-face {*/
-/*font-family: 'Alright Sans Bold';*/
-/*src: url('/fonts/AlrightSans-Bold.eot'); !* IE9 Compat Modes *!*/
-/*src: url('/fonts/AlrightSans-Bold.eot?#iefix') format('embedded-opentype'), !* IE6-IE8 *!*/
-/*url('/fonts/AlrightSans-Bold.woff') format('woff'), !* Modern Browsers *!*/
-/*url('/fonts/AlrightSans-Bold.ttf')  format('truetype'), !* Safari, Android, iOS *!*/
-/*url('/fonts/AlrightSans-Bold.svg#c127e502a0b04548e67202ca5a8151c4') format('svg'); !* Legacy iOS *!*/
-
-/*font-style:   normal;*/
-/*font-weight:  700;*/
-/*}*/
 
 
 

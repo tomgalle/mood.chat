@@ -68,6 +68,9 @@
     <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>
     <script>
+
+    var my_video_player;
+
     window.fbAsyncInit = function() {
       FB.init({
         appId      : '261041700909743',
@@ -77,13 +80,17 @@
 
 
       // Get Embedded Video Player API Instance
-      var my_video_player;
+
       FB.Event.subscribe('xfbml.ready', function(msg) {
         if (msg.type === 'video') {
           my_video_player = msg.instance;
         }
+        console.log(my_video_player);
       });
     };
+
+
+//    console.log(my_video_player);
 
     (function(d, s, id){
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -92,8 +99,6 @@
       js.src = "//connect.facebook.net/en_US/sdk.js";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-
-
 
 
 
@@ -116,27 +121,22 @@
 
     <div class="center">
 
-            <div class="screens">
-              <img class="screen01" src="images/screen01.png" width="197px" height="352px">
-            </div>
-
             <div class="phone">
+              <div class="screens">
+                <img class="screen01" src="images/screen01.png" width="197px" height="352px">
+              </div>
               <img src="images/iphone.png" alt="iphone" width="232px" height="473px">
             </div>
 
-            <div class="textblock">
+            <div class="infoblock">
               <div class="title">Mood Chat</div>
               <div class="subtitle">Add Background Sounds to Your Voice Chats</div>
-            </div>
-
-            <div class="buttons">
-              <a href="https://itunes.apple.com/us/app/mood-chat/id1001170415?mt=8" target="_blank">
-                <img class="appstorebutton" src="images/appstorebutton.png" alt="" width="221" height="65">
-              </a>
-
-              <!--<a href="https://www.youtube.com/watch?v=puEo5A7Zox8" target="_blank">-->
+              <div class="buttons">
+                <a href="https://itunes.apple.com/us/app/mood-chat/id1001170415?mt=8" target="_blank">
+                  <img class="appstorebutton" src="images/appstorebutton.png" alt="" width="221" height="65">
+                </a>
                 <img class="videobutton" src="images/videobutton02.png" alt="" width="221" height="65">
-              <!--</a>-->
+              </div>
             </div>
 
     </div> <!--center-->
@@ -159,38 +159,42 @@
 
 
 
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+
+
+    <!-- JAVASCRIPT -->
+
+    <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+
+    <script src="scripts/main.js"></script>
 
 
 
   <script>
 
-  (function() {
+    (function() {
 
-    var videowrapper = $('.videowrapper');
-    var videobg = $('.videobg');
-    var videobutton = $('.videobutton');
-    var video = $('.fb-video')
+          var videowrapper = $('.videowrapper');
+          var videobg = $('.videobg');
+          var videobutton = $('.videobutton');
+          var video = $('.fb-video')
 
-    videobutton.click(function(){
-        videobg.css({"display" : "inline"});
-        video.css({"z-index" : "1" });
-    });
-    my_video_player.play();
+          videobutton.click(function(){
+            videobg.css({"display" : "inline"});
+            video.css({"z-index" : "1" });
+            setTimeout(function(){ my_video_player.play(); }, 1000 );
+          });
 
-//
-    videobg.click(function(){
-      location.reload();
-//      video.css({"z-index" : "-20000" });
-//      videobg.css({"display": "none"});
-    });
-
-    console.log(my_video_player);
+          videobg.click(function(){
+            video.css({"z-index" : "-20000" });
+            videobg.css({"display": "none"});
+            my_video_player.pause();
+          });
 
   })();
 
+
   </script>
-  <script src="scripts/main.js"></script>
 
   </body>
 </html>
