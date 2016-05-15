@@ -105,18 +105,6 @@
     </script>
 
 
-    <!--  VIDEO  -->
-    <div class="videowrapper">
-
-      <div
-        class="fb-video"
-        data-href="https://www.facebook.com/tomgalledotcom/videos/10208276981095806/"
-        data-width="auto"
-        data-allowfullscreen="true"</div>
-    </div>
-
-    <div class="videobg"></div>
-    <!-- VIDEO END  -->
 
 
     <div class="center">
@@ -152,6 +140,20 @@
     <div class="whiteoverlay"></div>
     <div id="gradient"></div>
 
+    <!--  VIDEO  -->
+    <div class="videowrapper">
+
+      <div
+        class="fb-video"
+        data-href="https://www.facebook.com/tomgalledotcom/videos/10208276981095806/"
+        data-width="auto"
+        data-allowfullscreen="true"</div>
+    </div>
+
+    <div class="videobg"></div>
+    <!-- VIDEO END  -->
+    </div>
+
 
     <!-- GOOGLE ANALYTICS -->
 
@@ -179,16 +181,18 @@
           var videobutton = $('.videobutton');
           var video = $('.fb-video')
 
+          videowrapper.hide();
           videobutton.click(function(){
+            videowrapper.show();
             videobg.css({"display" : "inline"});
             video.css({"z-index" : "1" });
             setTimeout(function(){ my_video_player.play(); }, 1000 );
           });
 
           videobg.click(function(){
-            video.css({"z-index" : "-20000" });
             videobg.css({"display": "none"});
             my_video_player.pause();
+            videowrapper.hide();
           });
 
   })();

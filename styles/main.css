@@ -10,7 +10,6 @@ html, body{
 }
 
 .center{
-  z-index: -50;
   position: fixed;
   right: 0;
   left: 0;
